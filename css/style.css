@@ -87,7 +87,8 @@ header {
 }
 
 header span {
-    color: var(--cor-destaque);
+    /* color: var(--cor-destaque); */
+    color: #006aff;
 }
 
 header p {
