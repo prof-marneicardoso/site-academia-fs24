@@ -1,0 +1,224 @@
+
+/* Importa a fonte 'Montserrat' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Variáveis */
+:root {
+    /* Paleta de cores */
+    --cor-principal: #8a1a9e;
+    --cor-destaque: #d000f0;
+    --cor-01: #f9f9f9;
+    --cor-02: #cfcfcf;
+    --cor-03: #2c2e32;
+    --cor-04: #232323;
+    --cor-05: #000000;
+    --cor-06: #42454a;
+    --cor-07: #000000ad;
+    --cor-08: #006aff;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-03);
+    color: var(--cor-02);
+}
+
+p {
+    margin: 1rem 0;
+}
+
+/* Navbar (fixa) */
+nav {
+    padding: 1rem;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background-color: var(--cor-07);
+    color: #d000f0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row; /* linha (padrão) */
+    justify-content: right;
+    gap: 0.3rem;
+    list-style-type: none;
+}
+
+nav a {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: var(--cor-01);
+    font-weight: 700; /* bold (negrito) */
+    font-size: 1.2rem;
+    /* Afastamento das letras */
+    letter-spacing: 0.0625rem;
+    /* transition: 350ms; (1 segundo == 1000 milissegundos) */
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-destaque);
+}
+
+/* Banner */
+header {
+    position: relative;
+    height: 84vh; /* vh == viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    /*           x      y      desfoque     cor*/
+    text-shadow: 0.1rem 0.1rem 0.5rem       var(--cor-05);
+}
+
+header span {
+    color: var(--cor-destaque);
+}
+
+header p {
+    font-size: 2rem;
+}
+
+.cover {
+    position: absolute;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/banner.jpg');
+    background-size: cover;
+    filter: brightness(30%);
+}
+
+main {
+    padding: 2rem 3rem;
+}
+
+main p {
+    text-align: justify;
+}
+
+section {
+    min-height: 100vh;
+    padding-top: 6rem;
+
+    /*border: solid 1px yellow;   /* TESTE */
+}
+
+/* --- Modalidades e Planos --- */
+#modalidades, #planos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 8rem;
+    /* Herda o padding top e bottom do elemento pai */
+    padding: inherit 3rem;
+}
+
+.card-modalidade, .card-plano {
+    height: 400px;
+    transition: 0.3s;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card-modalidade img {
+    width: 100%;
+}
+
+.card-modalidade div {
+    padding: 1rem;
+}
+
+.card-modalidade:hover, .card-plano:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    /* Sombra:  X   Y   Desfoque    Espessura   Cor */
+    box-shadow: 0   0   0.5rem      0.2rem      var(--cor-04);
+}
+
+.card-plano {
+    padding: 2rem;
+    width: 100%;
+    background-color: var(--cor-01);
+    color: var(--cor-04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-plano h1 {
+    font-size: 2.5rem;
+}
+
+.card-plano h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.plus-title {
+    color: var(--cor-08);
+}
+
+.premium-title {
+    color: var(--cor-principal);
+}
+
+/* --- Button --- */
+button {
+    background-color: inherit;
+    padding: 0.8rem;
+    border-radius: 3rem;
+    border: solid 0.2rem var(--cor-02);
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-01);
+    cursor: pointer;
+    border: solid 0.2rem var(--cor-destaque);
+}
+
+
+/* --- Contato --- */
+
+
+/* --- Mapa --- */
+#mapa {
+    width: 100%;
+    height: 100vh;
+    /* Centraliza o elemento dentro do elemento pai */
+    margin-top: 5rem;
+
+    border: none;
+}
+
+#mapa iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+/* --- Footer --- */
